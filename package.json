@@ -26,10 +26,10 @@
     "js-yaml": "^3.6.1"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
+    "grunt": "^1.0.1",
     "grunt-debian-package": "^0.1.11",
-    "istanbul": "0.2.11",
-    "mocha": "1.20.1",
+    "istanbul": "0.4.5",
+    "mocha": "3.5.0",
     "request": "^2.42.0",
     "should": "3.3.2",
     "xunit-file": "0.0.5"
@@ -37,8 +37,8 @@
   "preferGlobal": true,
   "bin": "./index.js",
   "scripts": {
-    "test": "./node_modules/.bin/_mocha --reporter spec -t 10000 test | bunyan",
-    "cov": "`npm bin`/istanbul cover --root . -x node_modules -x test --dir ./reports `npm bin`/_mocha -- --reporter spec -t 10000 test | bunyan",
+    "test": "./test/test.sh",
+    "cov": "./test/test.sh cov",
     "coveralls": "npm run cov && node_modules/coveralls/bin/coveralls.js < reports/lcov.info"
   },
   "licenses": [
